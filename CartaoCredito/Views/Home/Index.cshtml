@@ -1,0 +1,28 @@
+﻿@model CartaoCredito.Models.CartaoCredito
+@{
+    ViewBag.Title = "Página Inicial";
+}
+
+<div class="page-inicial">
+    @using (Html.BeginForm("ValidaCartaoCredito","Home",FormMethod.Post, new { @id = "form-valida-cartao-credito" }))
+    {
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        @Html.LabelFor(m => m.NumeroCartao, new { @class = "control-label col-sm-12" })
+                        @Html.EditorFor(m => m.NumeroCartao, new { htmlAttributes = new { @class = "col-sm-12 form-control dirty text-box input-numero-cartao", @placeholder = "Insira o número do cartão." } })
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="retorno-validacao"></span>
+                </div>
+                <div class="right">
+                    <input type="submit" class="btn btn-primary btn-validar" value="Validar" />
+                </div>
+            </div>
+        </div>
+        
+    }
+
+</div>
